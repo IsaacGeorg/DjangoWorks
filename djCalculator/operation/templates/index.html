@@ -1,0 +1,13 @@
+{%extends 'basepage.html'%}
+
+{%load static%}
+{%block main_block%}
+
+<h1>Index: My Works</h1>
+    <a href="{%url 'add'%}">Addition</a>
+    <a href="{%url 'calorie'%}">Calorie</a>
+    <a href="{%url 'register'%}">Register</a>
+    <a href="{%url 'vehicle'%}">vehicle</a>
+    <img src="{%static 'images/calculator.png'%}" alt="">
+
+{%endblock%}

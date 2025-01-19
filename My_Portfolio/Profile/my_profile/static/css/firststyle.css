@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.text{
+  background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+  
+}
+
+
+li a:hover{
+  color: orangered;
+  text-decoration: underline;
+  cursor: pointer;
+}
+

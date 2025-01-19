@@ -1,0 +1,36 @@
+
+Employee.objects.all()
+
+Employee.objects.create(name="  ",title="  ")
+
+Employee.objects.get()
+
+Employee.objects.filter(id=356)
+
+field_lookup
+< __lt
+> __gt
+<= __lte
+>= __gte
+
+Employee.objects.filter(price__lt500)
+
+
+# Fetch all non-hr Employees
+
+Employee.objects.all().exclude(department='hr')
+
+#Delete Employee data of id=202
+Employee.objects.get(id=202).delete()
+
+
+
+Employee.objects.filter(id=500).update(name='hareesh',salary=50000)
+
+
+
+
+from django.db.models import Q
+qs=Book.objects.filter(Q(language='malayalam')|Q(language='Hindi'))
+qs=Book.objects.filter(language __in=["malayalam","Hindi"])
+

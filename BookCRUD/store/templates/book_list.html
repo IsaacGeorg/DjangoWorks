@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    
+    <!-- {%for b in data%}
+        <div>
+            <p>Title: {{b.title}}</p>
+            <p>Author: {{b.author}}</p>
+            <p>Price: {{b.price}}</p>
+            <a href="{%url 'book_detail' b.id%}">View</a>
+            <a href="{%url 'book_delete' b.id%}">Delete</a>
+            <a href="{%url 'book-edit' b.id%}">Edit</a>
+            <hr>
+
+        </div>
+    {%endfor%} -->
+    <div class="container">
+        <div class="rows my-3">
+            <div class="col-4"></div>
+            <div class="col-4 mt-3">
+                <form action="">
+                    {%csrf_token%}
+                    <input type="text">
+                    <button>search</button>
+                </form>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                        <th>Action</th>
+                    </tr>
+                    {%for b in data%}
+                    <tr>
+                        <td>{{b.title}}</td>
+                        <td>{{b.author}}</td>
+                        <td>{{b.price}}</td>
+                        <td>
+                            {%if b.image%}
+                            <img src="{{b.image.url}}" alt="" height="120px">
+                            {%endif%}
+                        </td>
+                        <td>
+                            <a href="{%url 'book_detail' b.id%}">View</a>
+                            <a href="{%url 'book_delete' b.id%}"><i class="bi bi-trash3-fill text-danger" type="button"></i></a>
+                            <a href="{%url 'book-edit' b.id%}">Edit</a>
+                        </td>
+                    </tr>
+
+                    {%endfor%}
+                </table>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+</body>
+</html>
